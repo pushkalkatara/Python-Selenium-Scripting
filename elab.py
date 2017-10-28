@@ -40,6 +40,7 @@ def store_login():
         except TimeoutException:
             print "Loading took too much time!"
     print("All Reports Printed")
+    browser.quit()
     return
 
 root = tk.Tk()
