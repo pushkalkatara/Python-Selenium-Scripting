@@ -17,7 +17,8 @@ import os
 import img2pdf
 from os import path
 
-def printpdf(out_filename,path_to_dir):
+def printpdf(path_to_dir):
+    out_filename = path_to_dir.split('\\')[-1]
     os.chdir(path_to_dir)
     if path.exists('report.png'):
         os.rename('report.png', 'report (0).png')
@@ -31,6 +32,5 @@ def printpdf(out_filename,path_to_dir):
 #Go to the folder that holds all your eLab reports. Right-click on any report, go to Properties
 #and copy the Location to 'path_to_dir' as shown below
 path_to_dir = r"C:\Users\Issam\Desktop\ELAB\issamada"  
-out_filename = path_to_dir.split('\\')[-1]
 
-printpdf(out_filename,path_to_dir)
+printpdf(path_to_dir)
